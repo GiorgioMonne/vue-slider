@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="root">
 
         <!-- inizio slider -->
         <div class="slider clearfix">
@@ -18,41 +18,14 @@
             <!-- immagini -->
             <div class="items-container">
 
-                <!-- <div class="item active">
-                    <img src="img/01.jpg" alt="slider">
-                    <div class="descrizione">
-                        <h1 class="title"></h1>
-                        <p class="text"></p>
-                    </div>
+                <div class="item ">
+                    <img :src="fotografie[currentImg].img" alt="slider">
                 </div>
-                <div class="item">
-                    <img src="img/02.jpg" alt="slider">
-                    <div class="descrizione">
-                        <h1 class="title"></h1>
-                        <p class="text"></p>
-                    </div>
+
+                <div class ="descrizione">
+                       <h1 :class="fotografie[currentImg]">{{title}}</h1>
+                       <p :class="fotografie[currentImg]">{{text}}</p>
                 </div>
-                <div class="item">
-                    <img src="img/03.jpg" alt="slider">
-                    <div class="descrizione">
-                        <h1 class="title"></h1>
-                        <p class="text"></p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/04.jpg" alt="slider">
-                    <div class="descrizione">
-                        <h1 class="title"></h1>
-                        <p class="text"></p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="img/05.jpg" alt="slider">
-                    <div class="descrizione">
-                        <h1 class="title"></h1>
-                        <p class="text"></p>
-                    </div>
-                </div> -->
                 
             </div>
              <!-- immagini -->
@@ -61,36 +34,23 @@
 
                 <!-- inizio pulsanti frecce-->
                 <div class="precedente">
-                    <i class="fas fa-chevron-up"></i>
+                    <i class="fas fa-chevron-up" @click="prev()"></i>
                 </div>
 
                 <!-- inizio pallini centrali -->
 
 
-                <!-- <div class="element active">
-                    <img src="img/01.jpg" alt="slider">
+                <div class="element" v-for="(content, index) in fotografie" :class="index == currentImg ?'active' : '' ">
+                    <img :src="content.img" alt="slider">
                 </div>
-                <div class="element">
-                    <img src="img/02.jpg" alt="slider">
-                </div>
-                <div class="element">
-                    <img src="img/03.jpg" alt="slider">
-                </div>
-                <div class="element">
-                    <img src="img/04.jpg" alt="slider">
-                </div>
-                <div class="element">
-                    <img src="img/05.jpg" alt="slider">
-                </div> -->
+                
 
-                <!-- fine pallini centrali -->
+                <!-- fine pallini centrali  -->
 
                 <div class="successiva">
-                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down" @click="next()"></i>
                 </div>
                 <!-- fine pulsanti frecce -->
-
-
             </div>
             <!-- <div class="pallini-container">
                 <div class="pallino active"></div>

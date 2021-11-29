@@ -63,11 +63,10 @@
 
 .item{
     height: 70vh;
-    display: none;
     position: relative;
 }
 
-.item.active{
+.active{
     display: block;
 }
 
