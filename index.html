@@ -11,6 +11,7 @@
 <body>
 
     <div id="root">
+        
 
         <!-- inizio slider -->
         <div class="slider clearfix">
@@ -23,8 +24,8 @@
                 </div>
 
                 <div class ="descrizione">
-                       <h1 :class="fotografie[currentImg]">{{title}}</h1>
-                       <p :class="fotografie[currentImg]">{{text}}</p>
+                       <h1 :class="fotografie[currentImg]">{{fotografie[currentImg].title}}</h1>
+                       <p :class="fotografie[currentImg]">{{fotografie[currentImg].text}}</p>
                 </div>
                 
             </div>
@@ -40,7 +41,7 @@
                 <!-- inizio pallini centrali -->
 
 
-                <div class="element" v-for="(content, index) in fotografie" :class="index == currentImg ?'active' : '' ">
+                <div class="element" v-for="(content, index) in fotografie" :class="index == currentImg ?'active' : '' " @click="selectSlide(index)">
                     <img :src="content.img" alt="slider">
                 </div>
                 
@@ -60,7 +61,7 @@
                 <div class="pallino"></div>
             </div> -->
         </div>
-
+        
     </div>
 
 

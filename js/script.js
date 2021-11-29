@@ -64,23 +64,32 @@ const app = new Vue({
         ],
         currentImg:0,
     },
+
     methods:{
-        next: function(){
-            if(this.currentImg == this.fotografie.length)
-            this.currentImg = 0;
+
+        next: function() {
+            
+            if (this.currentImg == this.fotografie.length-1){
+              this.currentImg = 0;
+            }
             else{
                 this.currentImg++;
             }
         },
-        prev: function(){
-            if(this.currentImg == 0)
-            this.currentImg = this.fotografie.length;
+
+        prev: function() {
+            if (this.currentImg == 0){
+              this.currentImg = this.fotografie.length-1;
+            }
             else{
                 this.currentImg--;
             }
-        }
-    }
+        },
 
+        selectSlide: function(index) {
+            this.currentImg = index;
+        }  
+    }
 });
 
 
